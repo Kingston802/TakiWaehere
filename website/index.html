@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Rapid and Safe Detection of Land Anomalies after a Major Tectonic Event</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Slab:wght@200;400&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hero">
+            <div class="left side">
+                <h1 class="hero-title">Rapid and Safe Detection of Land Anomalies after a Major Tectonic Event</h1>
+            </div>
+            <div class="right side">
+                <img src="assets/index.png" width="1800" height="auto">
+            </div>
+        </div>
+        <div class="content">
+            <h2>Motivation</h2>
+            <p>
+                Using Maxar’s leading satellite imagery, we can determine water depth and shore line location before and after a major tectonic event. We can use this to rapidly and safely survey an area and quantify change. After an event such as the 2016 Kaikōura quake, we can instantly detect and quantify the coastal uplift (or subsidence) of land; i.e. what area of land was uplifted and by how much did it rise. Having instant access to reliable survey data will significantly speed up recovery planning, if required. It can also be instantly passed onto scientists, who can use it to determine what type of tectonic event has occurred (for future predictions of change and adversity), as well as any biological/ecological impacts.
+            </p>
+            <div class="img-comp-container">
+                <div class="img-comp-img">
+                <img src="./assets/15MAR.JPG" width="600" height="400">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                <img src="./assets/16NOV.JPG" width="600" height="400">
+                </div>
+            </div>
+            <div style="height:400px"></div>
+            <i>Effects visible after the Kaikōura earthquake</i>
+            <h2>Bathymetry</h2>
+            <p>
+                Using a techniques published in 2019 by Princeton University (Geyman & Maloof 2019), we were able to use the multispectral data (namely the coastal blue, blue and green data) to capture information about the water depth. Pictured here is a comparison of our depth map for a coast line in the Kaikōura region. 
+                A place we chose to focus on specifically to evaluate the effect of the recent earthquake in the vicinity. 
+
+                To perform the calculations required to find the depth, we had to find both the radiance and reflectivity before subsituting them into the formulae. 
+
+                This new insight allows us to better understand the changes caused to coast lines by undersea earthquakes. 
+            </p>
+            <div class="img-comp-container">
+                <div class="img-comp-img">
+                <img src="./assets/index4.png" width="600" height="400">
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                <img src="./assets/index5.png" width="600" height="400">
+                </div>
+            </div>
+            <div style="height: 400px"></div>
+
+            <h2>Kmeans Clustering Classification</h2>
+            <p>
+                After receiving the data, we proceeded with unsupervised classification. This was due to the fact that we were given a limited data-set that would have only suffered in usability from the train-test split process of supervised classification and how the image view and bands feature of geospatial satellite data can provide a reliably accurate identifications of colour with their corresponding environmental form. From there, we fitted Kmeans() as well as MiniBatchKMeans() with the argument n_clusters = 8, to ensure significant detail without being pedantic in the isolation of our clusters.
+                <br>
+                <br>
+                By segmenting colour clusters and providing the corresponding correct labels,  we could classify and observe the evolving territories of the coast, rural land and urban areas (if there were some). Currently, this is what the prototype achieves. Given more time, we would have classified more models, collated them to assess any patterns, growth and changes in the environment throughout time. Furthermore, we would have definitely tried other clustering-type classification models such as K-Nearest Neighbours, to compare and assess any shortcomings our model may have and any benefit the alternative model would provide. 
+                <br>
+                <br>
+                As we performed  unsupervised machine learning, we have the benefits of identifying any potential anomalies that stray from their respective clusters as well as identifying any patterns known and unknown from the data.
+            </p>
+            <img src="./assets/index2.png">
+            <i>model 1: 12MAR28</i>
+            <img src="./assets/index3.png">
+            <i>model 2: 14JUL19</i>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="https://github.com/Kingston802/TakiWaehere"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+            <a href="https://colab.research.google.com/drive/1hLkdjGA9BKVPQ4Z4GD0EdyqD1tTF6BTg?usp=sharing"><img src="https://colab.research.google.com/img/favicon.ico?vrz=colab-20210415-060055-RC00_368609474" width="48" height="48"></a>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

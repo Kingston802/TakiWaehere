@@ -1,0 +1,97 @@
+* {
+    font-family: 'Open Sans', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3em;
+    margin: 2em;
+}
+
+.hero {
+    display: flex;
+    height: 100vh;
+}
+.side {
+    width: 50%;
+}
+.left, .right {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    margin: 2em auto;
+    width: 70%;
+}
+.content h2 {
+    margin: 2em 0;
+}
+.content p {
+    color: #444444;
+}
+
+.img-comp-container {
+  position: relative;
+  height: 1442px; /*should be the same height as the images*/
+  left: calc(-50% - 300px);
+  margin-top: 2em;
+  float: right;
+  width:max-content;
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div {
+    display: flex;
+    padding: 1em;
+}
+footer div a img, footer div a svg {
+    margin: 1em;
+    transition: 100ms;
+}
+footer div a img:hover, footer div a svg:hover {
+    transform: scale(1.2);
+}
